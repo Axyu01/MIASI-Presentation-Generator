@@ -28,25 +28,85 @@ public class PresentationParserBaseListener implements PresentationParserListene
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStat(PresentationParser.StatContext ctx) { }
+	@Override public void enterSomeSlide(PresentationParser.SomeSlideContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStat(PresentationParser.StatContext ctx) { }
+	@Override public void exitSomeSlide(PresentationParser.SomeSlideContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDef(PresentationParser.DefContext ctx) { }
+	@Override public void enterLastSlide(PresentationParser.LastSlideContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDef(PresentationParser.DefContext ctx) { }
+	@Override public void exitLastSlide(PresentationParser.LastSlideContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTextFunction(PresentationParser.TextFunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTextFunction(PresentationParser.TextFunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterImageFunction(PresentationParser.ImageFunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitImageFunction(PresentationParser.ImageFunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLastFunction(PresentationParser.LastFunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLastFunction(PresentationParser.LastFunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSomeParameter(PresentationParser.SomeParameterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSomeParameter(PresentationParser.SomeParameterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLastParameter(PresentationParser.LastParameterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLastParameter(PresentationParser.LastParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -59,18 +119,6 @@ public class PresentationParserBaseListener implements PresentationParserListene
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpr(PresentationParser.ExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFunc(PresentationParser.FuncContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFunc(PresentationParser.FuncContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

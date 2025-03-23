@@ -16,27 +16,58 @@ public interface PresentationParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgram(PresentationParser.ProgramContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PresentationParser#stat}.
+	 * Visit a parse tree produced by the {@code someSlide}
+	 * labeled alternative in {@link PresentationParser#slide}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStat(PresentationParser.StatContext ctx);
+	T visitSomeSlide(PresentationParser.SomeSlideContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PresentationParser#def}.
+	 * Visit a parse tree produced by the {@code lastSlide}
+	 * labeled alternative in {@link PresentationParser#slide}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDef(PresentationParser.DefContext ctx);
+	T visitLastSlide(PresentationParser.LastSlideContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code textFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextFunction(PresentationParser.TextFunctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code imageFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitImageFunction(PresentationParser.ImageFunctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code lastFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLastFunction(PresentationParser.LastFunctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code someParameter}
+	 * labeled alternative in {@link PresentationParser#parameter}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSomeParameter(PresentationParser.SomeParameterContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code lastParameter}
+	 * labeled alternative in {@link PresentationParser#parameter}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLastParameter(PresentationParser.LastParameterContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PresentationParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExpr(PresentationParser.ExprContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link PresentationParser#func}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunc(PresentationParser.FuncContext ctx);
 }

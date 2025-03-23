@@ -1,0 +1,10 @@
+SLIDE
+
+TEXT
+funny:123
+sunny:ulalal
+
+IMAGE
+path:abcd
+
+SLIDE

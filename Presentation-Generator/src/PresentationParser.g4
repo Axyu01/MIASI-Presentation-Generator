@@ -1,22 +1,22 @@
 parser grammar PresentationParser;
 options { tokenVocab=PresentationLexer; }
 
-program
-    : (stat|def)+ EOF
+program : (slide)+ EOF ;
+
+slide : SLIDE (NEW_LINE)+ (func)* #someSlide
+    | SLIDE #lastSlide
     ;
 
-stat: ID '=' expr ';'
-    | expr ';'
+func: TEXT (NEW_LINE)+ (parameter)* #textFunction
+    | IMAGE (NEW_LINE)+ (parameter)* #imageFunction
+    | (TEXT|IMAGE) #lastFunction
     ;
 
-def : ID '(' ID (',' ID)* ')' '{' stat* '}' ;
-
-expr: ID
-    | INT
-    | func
-    | 'not' expr
-    | expr 'and' expr
-    | expr 'or' expr
+parameter : ID COLON (NEW_LINE)* expr (NEW_LINE)+ #someParameter
+    | ID COLON (NEW_LINE)* expr #lastParameter
     ;
 
-func : ID '(' expr (',' expr)* ')' ;
+expr: INT
+    | VECTOR2
+    | TEXT_BLOCK
+    ;

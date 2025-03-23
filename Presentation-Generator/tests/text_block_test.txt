@@ -1,0 +1,10 @@
+SLIDE
+TEXT
+TEXT
+TEXT
+vector:(1,2)
+
+text:
+{
+
+}

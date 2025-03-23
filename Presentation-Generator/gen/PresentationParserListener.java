@@ -17,25 +17,89 @@ public interface PresentationParserListener extends ParseTreeListener {
 	 */
 	void exitProgram(PresentationParser.ProgramContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PresentationParser#stat}.
+	 * Enter a parse tree produced by the {@code someSlide}
+	 * labeled alternative in {@link PresentationParser#slide}.
 	 * @param ctx the parse tree
 	 */
-	void enterStat(PresentationParser.StatContext ctx);
+	void enterSomeSlide(PresentationParser.SomeSlideContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PresentationParser#stat}.
+	 * Exit a parse tree produced by the {@code someSlide}
+	 * labeled alternative in {@link PresentationParser#slide}.
 	 * @param ctx the parse tree
 	 */
-	void exitStat(PresentationParser.StatContext ctx);
+	void exitSomeSlide(PresentationParser.SomeSlideContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PresentationParser#def}.
+	 * Enter a parse tree produced by the {@code lastSlide}
+	 * labeled alternative in {@link PresentationParser#slide}.
 	 * @param ctx the parse tree
 	 */
-	void enterDef(PresentationParser.DefContext ctx);
+	void enterLastSlide(PresentationParser.LastSlideContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PresentationParser#def}.
+	 * Exit a parse tree produced by the {@code lastSlide}
+	 * labeled alternative in {@link PresentationParser#slide}.
 	 * @param ctx the parse tree
 	 */
-	void exitDef(PresentationParser.DefContext ctx);
+	void exitLastSlide(PresentationParser.LastSlideContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code textFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextFunction(PresentationParser.TextFunctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code textFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextFunction(PresentationParser.TextFunctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code imageFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void enterImageFunction(PresentationParser.ImageFunctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code imageFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void exitImageFunction(PresentationParser.ImageFunctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lastFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void enterLastFunction(PresentationParser.LastFunctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lastFunction}
+	 * labeled alternative in {@link PresentationParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void exitLastFunction(PresentationParser.LastFunctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code someParameter}
+	 * labeled alternative in {@link PresentationParser#parameter}.
+	 * @param ctx the parse tree
+	 */
+	void enterSomeParameter(PresentationParser.SomeParameterContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code someParameter}
+	 * labeled alternative in {@link PresentationParser#parameter}.
+	 * @param ctx the parse tree
+	 */
+	void exitSomeParameter(PresentationParser.SomeParameterContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lastParameter}
+	 * labeled alternative in {@link PresentationParser#parameter}.
+	 * @param ctx the parse tree
+	 */
+	void enterLastParameter(PresentationParser.LastParameterContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lastParameter}
+	 * labeled alternative in {@link PresentationParser#parameter}.
+	 * @param ctx the parse tree
+	 */
+	void exitLastParameter(PresentationParser.LastParameterContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PresentationParser#expr}.
 	 * @param ctx the parse tree
@@ -46,14 +110,4 @@ public interface PresentationParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpr(PresentationParser.ExprContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link PresentationParser#func}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunc(PresentationParser.FuncContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PresentationParser#func}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunc(PresentationParser.FuncContext ctx);
 }
