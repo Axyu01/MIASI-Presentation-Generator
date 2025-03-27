@@ -19,4 +19,5 @@ parameter : ID COLON (NEW_LINE)* expr (NEW_LINE)+ #someParameter
 expr: INT
     | VECTOR2
     | TEXT_BLOCK
+    | PATH
     ;
