@@ -2,7 +2,7 @@ public class Vector2 {
     public int x,y;
     public Vector2()
     {
-        x = y = 30;
+        x = y = 0;
     }
     public Vector2(int x, int y)
     {

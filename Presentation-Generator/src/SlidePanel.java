@@ -14,8 +14,11 @@ public class SlidePanel extends JPanel {
         //draw_text(g2d, "Courier", Color.RED, Font.PLAIN, 32, new Vector2(16, 96), "3rd text");
 
         //draw_image(g2d, "res/meme.jpg", new Vector2(200, 200), 0.2);
-        draw_text(g2d,new TextParameters());
         draw_image(g2d,new ImageParameters());
+        TextParameters tP = new TextParameters();
+        tP.position = new Vector2(30,30);
+        tP.font_color = Color.MAGENTA;
+        draw_text(g2d,tP);
     }
 
     public void draw_text(Graphics2D g2d, TextParameters params) {
