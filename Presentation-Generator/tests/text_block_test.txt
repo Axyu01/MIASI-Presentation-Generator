@@ -2,6 +2,9 @@ SLIDE
 TEXT
 TEXT
 TEXT
+position:(0,0)
+size:(100,100)
+font:"sialala12"
 vector:(1,2)
 
 text:
