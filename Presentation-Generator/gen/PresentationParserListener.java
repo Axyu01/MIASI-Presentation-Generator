@@ -101,6 +101,16 @@ public interface PresentationParserListener extends ParseTreeListener {
 	 */
 	void exitLastParameter(PresentationParser.LastParameterContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PresentationParser#vector2}.
+	 * @param ctx the parse tree
+	 */
+	void enterVector2(PresentationParser.Vector2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link PresentationParser#vector2}.
+	 * @param ctx the parse tree
+	 */
+	void exitVector2(PresentationParser.Vector2Context ctx);
+	/**
 	 * Enter a parse tree produced by {@link PresentationParser#expr}.
 	 * @param ctx the parse tree
 	 */

@@ -2,12 +2,22 @@ import javax.swing.*;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public class ParserTestsMain {
     public static void main(String[] args) throws Exception {
 
         //Parser kod
         //Iteracja po slajdach z zapisaniem
-        SlidePanel panel = new SlidePanel();
+        ArrayList<Object> parameters = new ArrayList<Object>();
+        TextParameters tP = new TextParameters();
+        tP.position = new Vector2(30,30);
+        tP.font_color = Color.MAGENTA;
+        parameters.add(new ImageParameters());
+        parameters.add(tP);
+        SlidePanel panel = new SlidePanel(parameters);
+
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(720, 720);

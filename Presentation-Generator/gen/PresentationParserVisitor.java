@@ -65,6 +65,12 @@ public interface PresentationParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLastParameter(PresentationParser.LastParameterContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PresentationParser#vector2}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVector2(PresentationParser.Vector2Context ctx);
+	/**
 	 * Visit a parse tree produced by {@link PresentationParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

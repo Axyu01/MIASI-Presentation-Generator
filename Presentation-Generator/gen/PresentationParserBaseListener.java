@@ -112,6 +112,18 @@ public class PresentationParserBaseListener implements PresentationParserListene
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVector2(PresentationParser.Vector2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVector2(PresentationParser.Vector2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpr(PresentationParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}

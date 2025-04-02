@@ -1,33 +1,28 @@
-import java.awt.*;
+import org.antlr.v4.runtime.misc.Pair;
 
-public class ImageParameters extends Parameters {
+public class ImageParameters {
 
     public String path;
     public Vector2 position;
     public Double size;
 
     public ImageParameters() {
-        dataType = DataType.IMAGE;
-
         path = "res/meme.jpg";
         position = new Vector2();
         size = 1d;
     }
 
-    @Override
-    public boolean SetParameter(String paramName, Object paramValue) {
-        if(paramName.equals("path") && paramValue instanceof String) {
-            path = (String)paramValue;
-            return true;
+    public void SetParameters(Parameters p) {
+        for(Pair<String, Object> pair : p.params) {
+            String paramName = pair.a;
+            Object paramValue = pair.b;
+            if (paramName.equals("path") && paramValue instanceof String) {
+                path = (String) paramValue;
+            } else if (paramName.equals("position") && paramValue instanceof Vector2) {
+                position = (Vector2) paramValue;
+            } else if (paramName.equals("size") && paramValue instanceof Double) {
+                size = (Double) paramValue;
+            }
         }
-        else if(paramName.equals("position") && paramValue instanceof Vector2) {
-            position = (Vector2)paramValue;
-            return true;
-        }
-        else if(paramName.equals("size") && paramValue instanceof Double) {
-            size = (Double)paramValue;
-            return true;
-        }
-        return false;
     }
 }
