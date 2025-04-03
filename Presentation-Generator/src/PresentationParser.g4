@@ -1,14 +1,14 @@
 parser grammar PresentationParser;
 options { tokenVocab=PresentationLexer; }
 
-program : (slide)+ EOF ;
+program : (slides+=slide)+ EOF ;
 
-slide : SLIDE (NEW_LINE)+ (func)* #someSlide
+slide : SLIDE (NEW_LINE)+ (functions+=func)* #someSlide
     | SLIDE #lastSlide
     ;
 
-func: TEXT (NEW_LINE)+ (parameter)* #textFunction
-    | IMAGE (NEW_LINE)+ (parameter)* #imageFunction
+func: TEXT (NEW_LINE)+ (params+=parameter)* #textFunction
+    | IMAGE (NEW_LINE)+ (params+=parameter)* #imageFunction
     | (TEXT|IMAGE) #lastFunction
     ;
 
@@ -18,6 +18,7 @@ parameter : ID COLON (NEW_LINE)* expr (NEW_LINE)+ #someParameter
 
 vector2 : L_PAR x=INT COMMA y=INT R_PAR ;
 expr: INT
+    | DOUBLE
     | vector2
     | TEXT_BLOCK
     | PATH

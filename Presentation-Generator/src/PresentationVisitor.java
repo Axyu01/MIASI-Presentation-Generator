@@ -8,7 +8,7 @@ public class PresentationVisitor extends PresentationParserBaseVisitor<Object>{
     ArrayList<SlidePanel> slidePanels = new ArrayList<SlidePanel>();
     @Override
     public Object visitProgram(PresentationParser.ProgramContext ctx) {
-        for(ParseTree child : ctx.children)
+        for(ParseTree child : ctx.slides)
         {
             slidePanels.add((SlidePanel) visit(child));
         }
@@ -28,54 +28,42 @@ public class PresentationVisitor extends PresentationParserBaseVisitor<Object>{
     }
     @Override
     public Object visitSomeSlide(PresentationParser.SomeSlideContext ctx) {
-        SlidePanel slidePanel = new SlidePanel();
-        for(ParseTree child : ctx.children)
+        ArrayList<Object> slideParams = new ArrayList<>();
+        for(ParseTree child : ctx.functions)
         {
             Parameters parameters = (Parameters) visit(child);
+            if(parameters == null)
+                continue;
             if(parameters.dataType == DataType.TEXT)
             {
                 TextParameters tP = new TextParameters();
                 tP.SetParameters(parameters);
-                slidePanel.draw_text(tP);
+                slideParams.add(tP);
             }
             else if(parameters.dataType == DataType.IMAGE)
             {
                 ImageParameters iP = new ImageParameters();
                 iP.SetParameters(parameters);
-                slidePanel.draw_image(iP);
+                slideParams.add(iP);
             }
         }
-        return slidePanel;
+        return new SlidePanel(slideParams);
     }
     @Override
     public Object visitLastSlide(PresentationParser.LastSlideContext ctx)
     {
         SlidePanel slidePanel = new SlidePanel();
-        for(ParseTree child : ctx.children)
-        {
-            Parameters parameters = (Parameters) visit(child);
-            if(parameters.dataType == DataType.TEXT)
-            {
-                TextParameters tP = new TextParameters();
-                tP.SetParameters(parameters);
-                slidePanel.draw_text(tP);
-            }
-            else if(parameters.dataType == DataType.IMAGE)
-            {
-                ImageParameters iP = new ImageParameters();
-                iP.SetParameters(parameters);
-                slidePanel.draw_image(iP);
-            }
-        }
         return slidePanel;
     }
     @Override
     public Object visitImageFunction(PresentationParser.ImageFunctionContext ctx) {
         Parameters parameters = new Parameters();
         parameters.dataType = DataType.IMAGE;
-        for(ParseTree child : ctx.children)
+        for(ParseTree child : ctx.params)
         {
             Pair<String,Object> pair = (Pair<String,Object>) visit(child);
+            if(pair == null)
+                continue;
             parameters.SetParameter(pair.a, pair.b);
         }
         return parameters;
@@ -84,30 +72,23 @@ public class PresentationVisitor extends PresentationParserBaseVisitor<Object>{
     public Object visitTextFunction(PresentationParser.TextFunctionContext ctx) {
         Parameters parameters = new Parameters();
         parameters.dataType = DataType.TEXT;
-        for(ParseTree child : ctx.children)
+        for(ParseTree child : ctx.params)
         {
             Pair<String,Object> pair = (Pair<String,Object>) visit(child);
+            if(pair == null)
+                continue;
             parameters.SetParameter(pair.a, pair.b);
         }
         return parameters;
     }
     @Override
     public Object visitLastFunction(PresentationParser.LastFunctionContext ctx) {
-        Parameters parameters = new Parameters();
-        if(ctx.TEXT() != null)
-            parameters.dataType = DataType.TEXT;
-        else if(ctx.IMAGE() != null)
-            parameters.dataType = DataType.IMAGE;
-        for(ParseTree child : ctx.children)
-        {
-            Pair<String,Object> pair = (Pair<String,Object>) visit(child);
-            parameters.SetParameter(pair.a, pair.b);
-        }
-        return parameters;
+        return null;
     }
     @Override
     public Object visitSomeParameter(PresentationParser.SomeParameterContext ctx) {
-        return new Pair<String,Object>(ctx.ID().getText(),visit(ctx.expr()));
+        Pair<String,Object> pair = new Pair<String,Object>(ctx.ID().getText(),visit(ctx.expr()));
+        return pair;
     }
     @Override
     public Object visitLastParameter(PresentationParser.LastParameterContext ctx) {
@@ -117,6 +98,10 @@ public class PresentationVisitor extends PresentationParserBaseVisitor<Object>{
     public Object visitExpr(PresentationParser.ExprContext ctx) {
         if (ctx.INT() != null) {
             return (Integer) Integer.parseInt(ctx.INT().getText()); // Explicit conversion to Integer
+        }
+        else if(ctx.DOUBLE() != null)
+        {
+            return (Double) Double.parseDouble(ctx.DOUBLE().getText());
         }
         else if(ctx.vector2() != null)
         {
@@ -130,7 +115,7 @@ public class PresentationVisitor extends PresentationParserBaseVisitor<Object>{
         }
         else if(ctx.PATH() != null)
         {
-            String str = ctx.TEXT_BLOCK().getText();
+            String str = ctx.PATH().getText();
             str = str.substring(1,str.length()-1);
             return str;
         }

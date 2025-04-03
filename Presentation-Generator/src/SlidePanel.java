@@ -35,13 +35,13 @@ public class SlidePanel extends JPanel {
 
     }
 
-    public void draw_text(TextParameters params) {
+    void draw_text(TextParameters params) {
         g2d.setPaint(params.font_color);
         g2d.setFont(new Font(params.font_name, params.font_style, params.font_size));
         g2d.drawString(params.text, params.position.x, params.position.y);
     }
 
-    public void draw_image(ImageParameters params) {
+    void draw_image(ImageParameters params) {
         Image image = new ImageIcon(params.path).getImage();
         g2d.drawImage(
                 image,

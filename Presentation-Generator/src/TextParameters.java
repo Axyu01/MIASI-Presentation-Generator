@@ -26,7 +26,7 @@ public class TextParameters {
             if (paramName.equals("font_name") && paramValue instanceof String) {
                 font_name = (String) paramValue;
             } else if (paramName.equals("font_color") && paramValue instanceof String) {
-                paramName = (String) paramValue;
+                font_color = Color.getColor((String) paramValue);
             } else if (paramName.equals("font_style") && paramValue instanceof Integer) {
                 font_style = (Integer) paramValue;
             } else if (paramName.equals("font_size") && paramValue instanceof Integer) {
@@ -34,7 +34,7 @@ public class TextParameters {
             } else if (paramName.equals("position") && paramValue instanceof Vector2) {
                 position = (Vector2) paramValue;
             } else if (paramName.equals("text") && paramValue instanceof String) {
-                paramName = (String) paramValue;
+                text = (String) paramValue;
             }
         }
     }

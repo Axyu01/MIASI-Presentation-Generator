@@ -3,6 +3,7 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 
 import java.awt.*;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class ParserTestsMain {
@@ -10,6 +11,7 @@ public class ParserTestsMain {
 
         //Parser kod
         //Iteracja po slajdach z zapisaniem
+        /*
         ArrayList<Object> parameters = new ArrayList<Object>();
         TextParameters tP = new TextParameters();
         tP.position = new Vector2(30,30);
@@ -25,9 +27,10 @@ public class ParserTestsMain {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
+        */
         // create a CharStream that reads from standard input
-        CharStream input = CharStreams.fromStream(System.in);
+        //CharStream input = CharStreams.fromStream(System.in);
+        CharStream input = CharStreams.fromPath(Paths.get("tests/input.txt"));
 
         // create a lexer that feeds off of input CharStream
         PresentationLexer lexer = new PresentationLexer(input);
@@ -40,11 +43,11 @@ public class ParserTestsMain {
 
         // start parsing at the program rule
         ParseTree tree = parser.program();
-        // System.out.println(tree.toStringTree(parser));
+         System.out.println(tree.toStringTree(parser));
 
         // create a visitor to traverse the parse tree
         PresentationVisitor visitor = new PresentationVisitor();
-        System.out.println(visitor.visit(tree));
+        System.out.println( visitor.visit(tree));
     }
 }
 
