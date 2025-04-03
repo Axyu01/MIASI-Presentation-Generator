@@ -1,6 +1,7 @@
 SLIDE
 IMAGE
-size:0.1
+path:"res/Slime.png"
+size:0.4
 TEXT
 position:(100,100)
 text:"xd"
@@ -12,3 +13,6 @@ TEXT
 position:(300,100)
 text:"xd"
 font_size:40
+IMAGE
+path:"res/Slime.png"
+size:0.2
