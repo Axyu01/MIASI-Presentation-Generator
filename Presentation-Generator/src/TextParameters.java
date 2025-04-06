@@ -19,6 +19,7 @@ public class TextParameters {
         position = new Vector2();
         text = "example text";
     }
+
     public void SetParameters(Parameters p) {
         for(Pair<String, Object> pair : p.params) {
             String paramName = pair.a;

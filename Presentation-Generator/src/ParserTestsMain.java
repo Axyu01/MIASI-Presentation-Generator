@@ -30,7 +30,7 @@ public class ParserTestsMain {
         */
         // create a CharStream that reads from standard input
         //CharStream input = CharStreams.fromStream(System.in);
-        CharStream input = CharStreams.fromPath(Paths.get("tests/input.txt"));
+        CharStream input = CharStreams.fromPath(Paths.get("Presentation-Generator/tests/input.txt"));
 
         // create a lexer that feeds off of input CharStream
         PresentationLexer lexer = new PresentationLexer(input);
@@ -43,7 +43,7 @@ public class ParserTestsMain {
 
         // start parsing at the program rule
         ParseTree tree = parser.program();
-         System.out.println(tree.toStringTree(parser));
+        System.out.println(tree.toStringTree(parser));
 
         // create a visitor to traverse the parse tree
         PresentationVisitor visitor = new PresentationVisitor();
