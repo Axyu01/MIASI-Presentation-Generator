@@ -1,4 +1,4 @@
-// Generated from /home/bk/Desktop/PWr Projects Repos/miasi/Presentation-Generator/src/PresentationLexer.g4 by ANTLR 4.13.2
+// Generated from /home/bk/Desktop/pwr_projects/miasi/Presentation-Generator/src/PresentationLexer.g4 by ANTLR 4.13.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

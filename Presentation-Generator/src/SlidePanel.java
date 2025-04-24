@@ -77,12 +77,16 @@ public class SlidePanel extends JPanel {
 
     void draw_image(Graphics2D g2d, ImageParameters params) {
         Image image = new ImageIcon(params.path).getImage();
+        int imgWidth = image.getWidth(null);
+        int imgHeight = image.getHeight(null);
+
         g2d.drawImage(
                 image,
                 params.position.x,
                 params.position.y,
-                params.position.x + (int)(image.getHeight(null) * params.size),
-                params.position.y + (int)(image.getWidth(null) * params.size),
+                params.position.x + (int)(imgWidth * params.size),
+                params.position.y + (int)(imgHeight * params.size),
+                0, 0, imgWidth, imgHeight,
                 null
         );
     }
