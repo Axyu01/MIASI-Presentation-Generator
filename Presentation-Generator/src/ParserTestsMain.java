@@ -30,7 +30,7 @@ public class ParserTestsMain {
         */
         // create a CharStream that reads from standard input
         //CharStream input = CharStreams.fromStream(System.in);
-        CharStream input = CharStreams.fromPath(Paths.get("Presentation-Generator/tests/input.txt"));
+        CharStream input = CharStreams.fromPath(Paths.get(args[0]));
 
         // create a lexer that feeds off of input CharStream
         PresentationLexer lexer = new PresentationLexer(input);
