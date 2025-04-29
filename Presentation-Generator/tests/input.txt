@@ -56,11 +56,11 @@ text:{
 Images
 }
 IMAGE
-path:"Presentation-Generator/res/Slime.png"
+path:"res/Slime.png"
 position:(250,250)
 size:0.4
 IMAGE
-path:"Presentation-Generator/res/Slime.png"
+path:"res/Slime.png"
 position:(200,450)
 size:0.2
 IMAGE
@@ -76,6 +76,7 @@ SLIDE
 TEXT
 position:(180,300)
 font_size:64
+font_color:"#FF0000"
 text:{
 Thank you
 }

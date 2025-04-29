@@ -27,7 +27,7 @@ public class TextParameters {
             if (paramName.equals("font_name") && paramValue instanceof String) {
                 font_name = (String) paramValue;
             } else if (paramName.equals("font_color") && paramValue instanceof String) {
-                font_color = Color.getColor((String) paramValue);
+                font_color = Color.decode((String) paramValue);
             } else if (paramName.equals("font_style") && paramValue instanceof Integer) {
                 font_style = (Integer) paramValue;
             } else if (paramName.equals("font_size") && paramValue instanceof Integer) {
