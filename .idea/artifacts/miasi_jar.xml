@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="miasi:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/miasi_jar</output-path>
+    <root id="archive" name="miasi.jar">
+      <element id="module-output" name="miasi" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../antlr/antlr-4.13.2-complete.jar" path-in-jar="/" />
+      <element id="library" level="project" name="antlr" />
+    </root>
+  </artifact>
+</component>
