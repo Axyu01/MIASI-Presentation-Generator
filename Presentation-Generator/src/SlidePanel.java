@@ -11,10 +11,10 @@ public class SlidePanel extends JPanel {
     ArrayList<Object> parameters;
     private static int frameIndex = 0;
     SlidePanel() {
-        this.setPreferredSize(new Dimension(720, 720));
+        this.setPreferredSize(new Dimension(1920, 1080));
     }
     SlidePanel(ArrayList<Object> parameters) {
-        this.setPreferredSize(new Dimension(720, 720));
+        this.setPreferredSize(new Dimension(1920, 1080));
         this.parameters = parameters;
     }
 
@@ -30,7 +30,7 @@ public class SlidePanel extends JPanel {
         renderSlide(g2d);
 
         if (!slideSaved) {
-            BufferedImage image = new BufferedImage(720, 720, BufferedImage.TYPE_INT_ARGB);
+            BufferedImage image = new BufferedImage(1920, 1080, BufferedImage.TYPE_INT_ARGB);
             Graphics2D imageG2D = image.createGraphics();
             renderSlide(imageG2D);
             imageG2D.dispose();
@@ -56,7 +56,7 @@ public class SlidePanel extends JPanel {
     private void renderSlide(Graphics2D g2d) {
 
         g2d.setPaint(Color.WHITE);
-        g2d.fillRect(0, 0, 720, 720);
+        g2d.fillRect(0, 0, 1920, 1080);
 
         if (parameters != null) {
             for (Object parameter : parameters) {

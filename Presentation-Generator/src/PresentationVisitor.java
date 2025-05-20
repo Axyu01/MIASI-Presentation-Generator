@@ -16,7 +16,7 @@ public class PresentationVisitor extends PresentationParserBaseVisitor<Object>{
         {
             JFrame frame = new JFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(720, 720);
+            frame.setSize(1920, 1080);
             frame.add(panel);
             frame.pack();
             frame.setLocationRelativeTo(null);
