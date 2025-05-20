@@ -32,8 +32,9 @@ even more text
 TEXT
 position:(40,316)
 font_size:32
+font_color:"#EE0000"
 text:{
-The text can have different sizes
+The text can have different sizes and colors
 }
 
 SLIDE
