@@ -1,58 +1,70 @@
 SLIDE
+IMAGE
+path:"Presentation-Generator/res/pwr_background.png"
+position:(0,0)
+size:1.63
 TEXT
-position:(100,200)
-font_size:92
+position:(300,200)
+font_size:128
 text:"BEHOLD"
 TEXT
-position:(1220,980)
-font_size:92
+position:(1020,980)
+font_size:128
 text:{
 The Presnt
 }
 
 SLIDE
+IMAGE
+path:"Presentation-Generator/res/pwr_background.png"
+position:(0,0)
+size:1.63
 TEXT
-position:(10,92)
-font_size:92
+position:(300,256)
+font_size:128
 text:{
 It can do
 }
 TEXT
-position:(40,172)
-font_size:64
+position:(400,384)
+font_size:96
 text:{
 text
 }
 TEXT
-position:(40,252)
-font_size:64
+position:(400,512)
+font_size:96
 text:{
 even more text
 }
 TEXT
-position:(40,316)
-font_size:32
+position:(400,640)
+font_size:48
 font_color:"#EE0000"
 text:{
 The text can have different sizes and colors
 }
 
 SLIDE
+IMAGE
+path:"Presentation-Generator/res/pwr_background.png"
+position:(0,0)
+size:1.63
 TEXT
-position:(10,100)
-font_size:92
+position:(300,256)
+font_size:128
 text:{
 Also
 }
 TEXT
-position:(40,200)
-font_size:92
+position:(400,384)
+font_size:128
 text:{
 It handles
 }
 TEXT
-position:(80,300)
-font_size:92
+position:(500,512)
+font_size:128
 text:{
 Images
 }
@@ -74,15 +86,19 @@ position:(1450,900)
 size:0.2
 
 SLIDE
+IMAGE
+path:"Presentation-Generator/res/pwr_background.png"
+position:(0,0)
+size:1.63
 TEXT
-position:(720,500)
-font_size:92
+position:(680,500)
+font_size:128
 text:{
 Thank you
 }
 TEXT
-position:(480,650)
-font_size:92
+position:(380,700)
+font_size:128
 text:{
 For your attention
 }
